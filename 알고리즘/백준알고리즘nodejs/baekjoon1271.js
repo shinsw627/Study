@@ -21,11 +21,16 @@
 // 0
 
 const fs = require("fs");
-const inputData = fs.readFileSync(0, "utf8").toString().split(" ");
+const inputData = fs
+  .readFileSync("/dev/stdin")
+  .toString()
+  .trim()
+  .split(" ")
+  .map(BigInt);
 
-const n = parseInt(inputData[0]);
-const m = parseInt(inputData[1]);
-
-let answer = n / m + "\n" + (n % m);
+const n = inputData[0];
+const m = inputData[1];
+let answer;
+answer = n / m + "\n" + (n % m);
 
 console.log(answer);

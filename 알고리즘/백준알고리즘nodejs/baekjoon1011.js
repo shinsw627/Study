@@ -21,15 +21,38 @@
 // 3
 // 4
 
-function minLength(x, y) {
-  const distance = y - x;
-  let answer = 0;
-  if (distance === 2) {
-    answer = 2;
-  }
-  const sqrtCeil = Math.ceil(Math.sqrt(distance));
-  answer = sqrtCeil * 2 - 1;
-  return answer;
-}
+const fs = require("fs");
+const inputData = fs
+  .readFileSync("/dev/stdin")
+  .toString()
+  .split("\n")
+  .map(String);
 
-console.log(minLength(0, 24));
+let x;
+let y;
+let a;
+let b;
+let answer;
+let array = [];
+
+for (let i = 1; i < Number(inputData[0]) + 1; i++) {
+  inputData[i] = inputData[i].split(" ");
+  x = inputData[i][0];
+  y = inputData[i][1];
+  let distance = y - x;
+
+  if (Math.sqrt(distance) % 1 === 0) {
+    answer = Math.sqrt(distance) * 2 - 1;
+  } else {
+    a = Math.pow(Math.ceil(Math.sqrt(distance)), 2);
+    b = Math.pow(Math.ceil(Math.sqrt(distance)) - 1, 2) + 1;
+
+    if ((a + b) / 2 <= distance) {
+      answer = 2 * Math.ceil(Math.sqrt(distance)) - 1;
+    } else {
+      answer = 2 * Math.ceil(Math.sqrt(distance)) - 2;
+    }
+  }
+  array.push(answer);
+  console.log(array[array.length - 1]);
+}
