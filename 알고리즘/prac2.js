@@ -1,43 +1,29 @@
-const inputData = "3";
+const inputData = [3, 16];
 
-let N = Number(inputData);
-let count;
+const Max = 1000000;
+let M = inputData[0];
+let N = inputData[1];
+let isPrimeArr = new Array(N + 1);
+let square = 0;
 
-if ([1, 2, 4, 7, 8].indexOf(N) !== -1) {
-  count = -1;
-} else {
-  switch (N % 10) {
-    case 1:
-      count = (N - 6) / 5 + 2;
+isPrimeArr.fill(true);
+isPrimeArr[0] = isPrimeArr[1] = false;
+
+for (let i = 2; i < N + 1; i++) {
+  if (isPrimeArr[i]) {
+    if (parseInt(Math.pow(i, 2)) > Max) {
       break;
-    case 2:
-      count = (N - 12) / 5 + 4;
-      break;
-    case 3:
-      count = (N - 3) / 5 + 1;
-      break;
-    case 4:
-      count = (N - 9) / 5 + 3;
-      break;
-    case 5:
-      count = N / 5;
-      break;
-    case 6:
-      count = (N - 6) / 5 + 2;
-      break;
-    case 7:
-      count = (N - 12) / 5 + 4;
-      break;
-    case 8:
-      count = (N - 3) / 5 + 1;
-      break;
-    case 9:
-      count = (N - 9) / 5 + 3;
-      break;
-    case 0:
-      count = N / 5;
-      break;
+    } else {
+      for (square = parseInt(Math.pow(i, 2)); square < N + 1; ) {
+        isPrimeArr[square] = false;
+        square += i;
+      }
+    }
   }
 }
 
-console.log(count);
+for (let i = M; i < N + 1; i++) {
+  if (isPrimeArr[i]) {
+    console.log(i);
+  }
+}
