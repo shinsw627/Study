@@ -1,8 +1,4 @@
-let A = "LLOOVVVEEEE";
-
-console.log(A.match(/L/g).length);
-
-let inputData = ["MERYLOV", "5", "JOHN", "DAVE", "STEVE", "JOHN", "DAVE"];
+let inputData = ["JANE", "4", "THOMAS", "MICHAEL", "INDY", "LIU"];
 let dataArray = [];
 for (let i = 2; i < Number(inputData[1]) + 2; i++) {
   dataArray.push(inputData[i]);
@@ -22,7 +18,6 @@ for (let i = 0; i < Number(inputData[1]); i++) {
   let L =
     L1 +
     (dataArray[i].match(/L/g)?.length ? dataArray[i].match(/L/g).length : 0);
-  console.log(L);
   let O =
     O1 +
     (dataArray[i].match(/O/g)?.length ? dataArray[i].match(/O/g).length : 0);
@@ -35,5 +30,5 @@ for (let i = 0; i < Number(inputData[1]); i++) {
 
   array.push(((L + O) * (L + V) * (L + E) * (O + V) * (O + E) * (V + E)) % 100);
 }
-console.log(dataArray);
+console.log(array);
 console.log(dataArray[array.indexOf(Math.max(...array))]);

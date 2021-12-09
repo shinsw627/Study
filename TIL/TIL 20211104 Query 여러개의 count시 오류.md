@@ -2,7 +2,7 @@
 
 ```sql
 SELECT b.board_id,b.board_title,b.board_image,b.view_count,count(l.board_id) as like_count,count(c.board_id) as comment_count,
-  CASE u.board_id 
+  CASE u.board_id
   WHEN b.board_id THEN 'true'
   ELSE 'false'
   END AS like_state
@@ -28,7 +28,7 @@ count를 두번 사용하면 group by의 영향인지 수치가 이상해지는 
 
 ```sql
 SELECT b.board_id,b.board_title,b.board_image,b.view_count,count(l.board_id) as like_count
- 
+
   FROM boards AS b
   left OUTER JOIN likes AS l
   ON b.board_id = l.board_id
@@ -40,7 +40,7 @@ SELECT b.board_id,b.board_title,b.board_image,b.view_count,count(l.board_id) as 
 
 위에서는 like_count를 조회하고
 
-아래에서는 comment_count 를 조회했다. 
+아래에서는 comment_count 를 조회했다.
 
 ```sql
 select b.board_id, count(c.board_id) as comment_count,
@@ -64,7 +64,7 @@ group by b.board_id
 ```sql
 select t1.board_id, t1.board_title, t1.board_image, t1.view_count, t1.like_count, t2.comment_count, t2.like_state from
 (SELECT b.board_id,b.board_title,b.board_image,b.view_count,count(l.board_id) as like_count
- 
+
   FROM boards AS b
   left OUTER JOIN likes AS l
   ON b.board_id = l.board_id
@@ -72,7 +72,7 @@ select t1.board_id, t1.board_title, t1.board_image, t1.view_count, t1.like_count
   GROUP BY b.board_id
   ORDER BY b.createdAt DESC) as t1
   join
-  
+
 (select b.board_id, count(c.board_id) as comment_count,
 case u.board_id
 when b.board_id then 'true'

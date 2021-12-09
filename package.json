@@ -1,0 +1,20 @@
+{
+  "name": "TIL",
+  "version": "1.0.0",
+  "description": "공부는 기본적으로 구글링과 책 그리고 출처남긴 깃허브 등에서 합니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shinsw627/TIL.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shinsw627/TIL/issues"
+  },
+  "homepage": "https://github.com/shinsw627/TIL#readme"
+}
