@@ -13,7 +13,7 @@ const [n, ...input] = (
   .split("\n")
   .map(Number);
 
-dp = Array(301);
+let dp = new Array(301).fill(0);
 
 dp[0] = input[0];
 dp[1] = Math.max(input[0] + input[1], input[1]);
