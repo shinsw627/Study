@@ -36,8 +36,7 @@ DB저장에 되는 것을 확인하였다
 
 postman으로 실험결과
 
-![](https://images.velog.io/images/shinsw627/post/
-828d3854-2722-4453-8422-e8ad8225b239/image.png)
+![](https://images.velog.io/images/shinsw627/post/828d3854-2722-4453-8422-e8ad8225b239/image.png)
 
 S3에도 정상적으로 저장이 되는 것을 확인하였다.
 
