@@ -14,21 +14,15 @@ ES6 이후로 추가된 것이 let과 const 이다.
 
 ![](https://images.velog.io/images/shinsw627/post/9ee1bbeb-f716-48dd-9df9-99112445939c/image.png)
 
-![](https://images.velog.io/images/shinsw627/post/df985422-929b-4c45-aa9d-e0db8b49f8c7/image.png)
-
 let은 재선언이 되지 않는다. (const도 마찬가지다)
 
 그리고 let과 const의 차이는 변수의 재할당에 있다.
 
 ![](https://images.velog.io/images/shinsw627/post/f7d2d964-90d6-4af6-bb53-f3585f2fe161/image.png)
 
-![](https://images.velog.io/images/shinsw627/post/7e11b20c-e71b-4485-b93e-914e4128f6c0/image.png)
-
 let의 경우 변수의 재할당이 가능하다.
 
 ![](https://images.velog.io/images/shinsw627/post/835c0fab-dd7f-46ca-b8e2-1c0548bdc65e/image.png)
-
-![](https://images.velog.io/images/shinsw627/post/02e2584b-a2a9-4271-b893-ee39971b1758/image.png)
 
 const의 경우 변수의 재할당이 불가능하다. 정적인 상수의 경우 const를 사용하여 선언하면 되겠다.
 
