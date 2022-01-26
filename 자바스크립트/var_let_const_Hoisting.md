@@ -1,6 +1,7 @@
 ## 변수 선언
 
 var는 변수 선언 방식에 있어서 큰 단점을 가지고 있다.
+
 ![](https://images.velog.io/images/shinsw627/post/ed07d6bf-1474-4324-a5d3-3a89f287f0f2/image.png)
 
 변수를 한 번 더 선언해도 에러가 나지 않고 각기 다른 값이 출력된다.
