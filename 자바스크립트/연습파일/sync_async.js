@@ -14,12 +14,13 @@ Promise.resolve().then(function () {
     console.log("프로미스 - 셋타임아웃", Date.now())
     
   }, 0)
-  console.log("프로미스2")
+  console.log("프로미스2", Date.now())
 });
 
-function timeout(ms) {
+function timeout(ms, a) {
   return new Promise((resolve) => setTimeout(function (resolve){
-    return console.log(ms/1000,'초 타임아웃 끝', Date.now())
+    a = "async 2"
+    return console.log(ms/1000,'초 타임아웃 끝', Date.now()), a
   }, ms))
 }
 
@@ -27,9 +28,9 @@ function timeout(ms) {
 async function Async () {
   let a = "async 1"
   console.log(a)
-  await timeout(1000)
+  await timeout(0)
   console.log(a, "async a 끝")
-  return console.log("async 끝")
+  return console.log(a,"async await 끝")
 }
 
 Async()
