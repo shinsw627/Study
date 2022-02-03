@@ -162,3 +162,49 @@ async create(@Body() createCatDto: CreateCatDto) {
   this.catsService.create(createCatDto);
 
 ```
+
+### Putting it all together
+
+이제 RoleGuard와 연결해 보자. 현재 모든 cases는 true를 return 하여 모든 request가 진행되게 되어있다. 우리는 현재 user에게 배정된 role을, 현재 route의 실제 role과 비교함으로써, 반환 값을 조건화 하길 원한다. route의 roles에 액세스 하기 위해 우리는 @nestjs/core 패키지의 Reflector 라는 helper class를 사용하겠다.
+
+```ts
+//roles.guard.ts
+import { Injectable, CanActivate, ExecutionContext } from "@nestjs/common";
+import { Reflector } from "@nestjs/core";
+
+@Injectable()
+export class RolesGuard implements CanActivate {
+  constructor(private reflector: Reflector) {}
+
+  canActivate(context: ExecutionContext): boolean {
+    const roles = this.reflector.get<string[]>("roles", context.getHandler());
+    if (!roles) {
+      return true;
+    }
+    const request = context.switchToHttp().getRequest();
+    const user = request.user;
+    return matchRoles(roles, user.roles);
+  }
+}
+```
+
+> HINT
+> node.js 생태계에서, 인증된 user를 request object에 붙이는 것이 통상적이다. 그러므로 위의 샘플 코드에서, request.user는 user instance와 배역을 포함하고 있다고 가정한다.
+
+만약 user가 허락되지 않는다면 Nest는 자동으로 403 응답을 리턴한다.
+
+```ts
+{
+  "statusCode": 403,
+  "message": "Forbidden resource",
+  "error": "Forbidden"
+}
+```
+
+guard가 false를 리턴하면 프레임워크는 ForbiddenException을 throw 한다. 다른 error response를 리턴하고 싶다면, 고유한 expection을 throw 하도록 하면 된다.
+
+```ts
+throw new UnauthorizedException();
+```
+
+guard에 throw 된 모든 exception은 exceptions layer에서 handle 될 수 있다.
