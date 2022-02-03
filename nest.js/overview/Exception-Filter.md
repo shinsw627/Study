@@ -1,3 +1,6 @@
+https://velog.io/write?id=80a282e8-c143-46da-818a-40d35ab556b7
+저의 블로그 입니다. 가독성을 위해 블로그에서 보시는 것을 추천드립니다.
+
 NestJS documentation을 번역하고 공부해가며 적은 글입니다.
 
 Nest LifeCycle에서 Exception Filter의 범위를 잘 보여주는 그림이다.
