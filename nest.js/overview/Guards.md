@@ -1,3 +1,7 @@
+[Nest.js - Guards - Velog 글 바로가기](https://velog.io/@shinsw627/Nest.js-Guards-wqoiuzjk)
+<br>
+저의 블로그 입니다. 가독성을 위해 블로그에서 보시는 것을 추천드립니다.
+<br>
 Nest.js에서의 Guards에 대해 소개하겠다. documentation을 번역한다는 느낌으로 생각하면 되겠다.
 https://docs.nestjs.com/guards
 
