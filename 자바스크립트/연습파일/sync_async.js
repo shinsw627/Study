@@ -67,12 +67,17 @@
 
 // console.log(2);
 
-console.log(1, Date.now());
+console.log(1);
+console.log(2);
+console.log(3);
 
-console.log(2, Date.now());
-for (let i = 0; i < 1000000; i++) {}
-console.log(3, Date.now());
+console.log("아메리카노 시럽 시럽 시럽 빼고주세요");
+setTimeout(() => console.log("커피 감사합니다"), 1000);
+console.log("카톡 메세지를 확인");
+console.log("어제 알고리즘 문제가 어려웠는데...");
 
-console.log(1, Date.now());
-setTimeout(() => console.log(2, Date.now()), 1000);
-console.log(3, Date.now());
+// for (let i = 0; i < 10000000; i++) {
+//   if (i === 9999999) {
+//     console.log(i, Date.now());
+//   }
+// }
