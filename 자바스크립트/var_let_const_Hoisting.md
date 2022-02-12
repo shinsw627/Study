@@ -80,8 +80,13 @@ let 로 선언된 변수는 선언 단계와 초기화 단계가 분리되어 �
 일반적으로 변수선언은 const를 이용하되 재할당이 필요한 경우에만 let을 사용하는 것이 좋겠다.
 
 참고
+
 https://velog.io/@changchanghwang/%ED%98%B8%EC%9D%B4%EC%8A%A4%ED%8C%85
+
 https://velog.io/@bathingape/JavaScript-var-let-const-%EC%B0%A8%EC%9D%B4%EC%A0%90
+
 https://80000coding.oopy.io/e1721710-536f-43f2-823b-663389f5fbfa
+
 https://gist.github.com/LeoHeo/7c2a2a6dbcf80becaaa1e61e90091e5d
+
 https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html
