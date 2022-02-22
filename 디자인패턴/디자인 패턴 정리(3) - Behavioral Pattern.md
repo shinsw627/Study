@@ -70,7 +70,9 @@
 - 관찰 대상이 되는 객체
 - 자신을 관찰하는 옵저버들 리스트를 가지고 관리도 함.
   - 옵저버 붙이기(attach), 떼기(detach), 알리기(notfiy) 를 가지고 있어야 함.
-    **Observer**
+
+**Observer**
+
 - Subject 를 관찰하는 객체
 - Subejct 가 notify 를 호출하면 Observer 의 update 도 호출됨.
   - 즉 Observer.update() 에 관찰 대상이 notify 했을 때의 할 일들을 적으면 됨.
