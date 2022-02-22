@@ -49,3 +49,28 @@
 ### 구조
 
 ![](https://images.velog.io/images/shinsw627/post/7465cf16-6d60-40b0-8b54-f5d33342f7ec/image.png)
+
+## 옵저버
+
+옵저버 패턴은 하나의 관찰대상 - 여러 개의 관찰자 구조가 필요할 때 쓰는 패턴이다.
+
+### 활용 상황
+
+- 관찰대상 - 관찰자의 구조를 가질 때 쓰면 된다.
+- 이벤트 핸들러가 대표적인 옵저버 패턴의 예다.
+  - 이벤트 핸들러 : Observer
+  - 이벤트 : Subject
+
+### 구조
+
+![](https://images.velog.io/images/shinsw627/post/4992509b-b71d-49b7-bb0c-cec379c1beeb/image.png)
+
+**Subject**
+
+- 관찰 대상이 되는 객체
+- 자신을 관찰하는 옵저버들 리스트를 가지고 관리도 함.
+  - 옵저버 붙이기(attach), 떼기(detach), 알리기(notfiy) 를 가지고 있어야 함.
+    **Observer**
+- Subject 를 관찰하는 객체
+- Subejct 가 notify 를 호출하면 Observer 의 update 도 호출됨.
+  - 즉 Observer.update() 에 관찰 대상이 notify 했을 때의 할 일들을 적으면 됨.
